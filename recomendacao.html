@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recomendações BM's Colombelli</title>
+
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ===== BASE ===== */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #121212);
+      color: #e0e0e0;
+      line-height: 1.6;
+      letter-spacing: 0.3px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 60px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: center;
+    }
+
+    header .logo {
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 40px rgba(157, 202, 241, 0.5);
+      flex-shrink: 0;
+    }
+
+    header .company-name {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e88e5;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.1);
+      margin-top: 10px;
+    }
+
+    /* Novo título "Recomendações de BM's Com Gastos" */
+    .header-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #74e6f3;
+      margin-top: 15px;
+      text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+    }
+
+    /* ===== DESTAQUE ===== */
+    .highlight {
+      background: rgba(20, 20, 20, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+      text-align: center;
+      color: #00e5ff;
+      font-weight: 600;
+      box-shadow: inset 0 0 25px rgba(0, 229, 255, 0.08);
+    }
+
+    .highlight .quote {
+      margin-top: 20px;
+      font-style: italic;
+      color: #bbb;
+      font-size: 1rem;
+    }
+
+    /* ===== LISTA DE RECOMENDAÇÕES ===== */
+    .recommendations {
+      background: rgba(18, 18, 18, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 14px;
+      margin-top: 40px;
+    }
+
+    .recommendations h2 {
+      font-size: 1.9rem;
+      color: #4cafef;
+      margin-bottom: 25px;
+      font-weight: 600;
+      border-left: 4px solid #1e88e5;
+      padding-left: 12px;
+    }
+
+    .item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+
+    .number {
+      background: linear-gradient(135deg, #1e88e5, #0d47a1);
+      color: white;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      box-shadow: 0 0 12px rgba(30, 136, 229, 0.6);
+    }
+
+    .content {
+      flex: 1;
+      font-size: 1rem;
+      color: #ccc;
+    }
+    .content strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* ===== PLATAFORMAS ===== */
+    .platforms {
+      margin-top: 60px;
+    }
+
+    .platforms h2 {
+      font-size: 1.9rem;
+      color: #4cafef;
+      margin-bottom: 25px;
+      font-weight: 600;
+      border-left: 4px solid #00e5ff;
+      padding-left: 12px;
+    }
+
+    .platform-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background: rgba(18, 18, 18, 0.75);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 25px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .platform-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0, 229, 255, 0.1);
+    }
+
+    .platform-img {
+      width: 180px;
+      height: 110px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .platform-name {
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #1e88e5;
+      margin-bottom: 6px;
+    }
+
+    .platform-desc {
+      font-size: 0.95rem;
+      color: #bbb;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #1e88e5, #00e5ff);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+    .btn:hover {
+      opacity: 0.85;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      margin-top: 70px;
+      padding: 30px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: #888;
+      font-size: 0.95rem;
+    }
+
+    .footer-logo {
+      width: 130px;
+      height: 130px;
+      margin: 25px auto;
+      border-radius: 50%;
+      background-size: cover;
+      box-shadow: 0 0 25px rgba(30, 136, 229, 0.4);
+      background-image: url('WhatsApp Image 2025-09-17 at 15.46.36.jpeg');
+    }
+
+    .footer-title {
+      font-size: 1.6rem;
+      color: #1e88e5;
+      margin: 15px 0;
+    }
+
+    .footer-text {
+      margin: 15px auto;
+      max-width: 700px;
+      font-size: 0.95rem;
+      color: #aaa;
+    }
+
+    .footer-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .footer-btn {
+      background: linear-gradient(135deg, #1e88e5, #00e5ff);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+    .footer-btn:hover {
+      opacity: 0.85;
+    }
+
+    .links {
+      margin-top: 20px;
+    }
+    .links a {
+      color: #00e5ff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 0.9rem;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="WhatsApp Image 2025-09-17 at 15.46.36.jpeg" alt="Logo BM's Colombelli" class="logo" />
+      <div class="company-name">BM's Colombelli</div>
+      <div class="header-title">Recomendações de BM's Com Gastos</div>
+    </header>
+
+    <div class="highlight">
+      <p>BONS ATIVOS E BOAS FERRAMENTAS NÃO VALEM DE NADA SE VOCÊ NÃO SABE USAR PARA ESCALAR.</p>
+      <p>A Meta atualiza seu algoritmo todos os dias, mas seguindo estas recomendações, você protege seus ativos e escala como os grandes players.</p>
+      <div class="quote">
+        "Não subestime a importância de seguir essas práticas — esse guia pode transformar sua operação e aumentar significativamente seus resultados financeiros."
+      </div>
+    </div>
+
+    <div class="recommendations">
+      <h2>Recomendações Essenciais Para BM’s com Gastos</h2>
+      <div class="item"><div class="number">1</div><div class="content"><strong>Aceite o convite em até 24 horas</strong><br>Convites pendentes podem ser invalidados pela Meta, resultando na perda de acesso ao ativo.</div></div>
+      <div class="item"><div class="number">2</div><div class="content"><strong>Utilize sempre Multilogin e Proxy</strong><br>Evite bloqueios por IP com ferramentas como Multilogin e proxies dedicados.</div></div>
+      <div class="item"><div class="number">3</div><div class="content"><strong>Adicione um segundo administrador (backup)</strong><br>Proteja-se contra perda total do acesso em casos de verificação, bloqueio ou rollback da Meta.</div></div>
+      <div class="item"><div class="number">4</div><div class="content"><strong>Limite o orçamento inicial a R$100/dia</strong><br>O "aquecimento" ajuda a ganhar confiança com o algoritmo e reduz riscos de bloqueios.</div></div>
+      <div class="item"><div class="number">5</div><div class="content"><strong>Inicie com no máximo 3 campanhas</strong><br>Distribua o orçamento equilibradamente. Múltiplas campanhas simultâneas atrapalham o comportamento do algoritmo.</div></div>
+      <div class="item"><div class="number">6</div><div class="content"><strong>Evite cartões "Conta Simples"</strong><br>Esses cartões têm alto índice de bloqueio. Opte por alternativas mais seguras.</div></div>
+      <div class="item"><div class="number">7</div><div class="content"><strong>Evite cartões de bancos tradicionais (Itaú, Bradesco, Inter...)</strong><br>Cartões desses bancos podem ser marcados como suspeitos. Use opções mais compatíveis com a Meta.</div></div>
+    </div>
+
+    <div class="platforms">
+      <h2>Plataformas Recomendadas: Proteja Seus Ativos</h2>
+      <div class="platform-item">
+        <img src="portao3.png" alt="Portão3" class="platform-img" />
+        <div>
+          <div class="platform-name">Portão3</div>
+          <div class="platform-desc">Controle seu anúncio com zero de bloqueios e gestão eficiente. Clique no botão abaixo para abrir sua conta rápida, com domínio e um gerente particular.</div>
+          <a href="https://www.portao3.com.br/gestao-ads?p=colombelliads" class="btn">Acessar Portão3</a>
+        </div>
+      </div>
+
+      <div class="platform-item">
+        <img src="icon.png" alt="Lauth" class="platform-img" />
+        <div>
+          <div class="platform-name">ADSPower</div>
+          <div class="platform-desc">Melhor Multilogin para gestão de perfis e ativos digitais. Acesse seus perfis de maneira mais segura, prática, rápida e automática.</div>
+          <a href="https://share.adspower.com/colombelliads" class="btn">Acessar ADSPower</a>
+        </div>
+      </div>
+
+      <div class="platform-item">
+        <img src="proxybr.png" alt="AlfaProxy" class="platform-img" />
+        <div>
+          <div class="platform-name">ProxyBR</div>
+          <div class="platform-desc">Proxy mais estável, testado e aprovado pela nossa equipe. Sua proxy é analisada e tem 100% de compatibilidade com a Meta.</div>
+          <a href="https://painel.proxybr.com.br?a=colombelliads" class="btn">Acessar ProxyBR</a>
+        </div>
+      </div>
+
+      <div class="platform-item">
+        <img src="WhatsApp Image 2025-09-17 at 15.46.36.jpeg" alt="Comunidade BM's" class="platform-img" />
+        <div>
+          <div class="platform-name">Comunidade de BM’s</div>
+          <div class="platform-desc">Acesse nossa comunidade em tempo real e veja os BMs anunciados diariamente. Troque experiências e clique por dentro das novidades.</div>
+          <a href="https://chat.whatsapp.com/G7znc8v5hm15dRjAPJT0Qt" class="btn">Entrar na Comunidade</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Seguindo essas recomendações, você protege seus ativos e garante mais estabilidade nas operações.</p>
+      <div class="footer-logo"></div>
+      <div class="footer-title">BM's Colombelli</div>
+      <div class="footer-text">
+        Soluções completas para gerenciamento de contingência e continuidade de negócios. 
+        Tenha suporte especializado para todas as suas operações e não pare por causa de bloqueios.
+      </div>
+      <div class="footer-buttons">
+        <a href="https://wa.me/5511962999828" class="footer-btn">Suporte Via WhatsApp</a>
+        <a href="https://www.instagram.com/jvcolombelli_/" class="footer-btn">Siga-nos no Instagram</a>
+      </div>
+      <div class="footer-buttons">
+        <a href="https://chat.whatsapp.com/G7znc8v5hm15dRjAPJT0Qt" class="footer-btn">Adquira BM's Com Gastos</a>
+      </div>
+      <p>© 2025 BM's Colombelli. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>
